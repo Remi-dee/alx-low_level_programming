@@ -1,4 +1,4 @@
-#include "main.h"
+#include "alphabet.h"
 
 /**
  * print_alphabet - Check description
