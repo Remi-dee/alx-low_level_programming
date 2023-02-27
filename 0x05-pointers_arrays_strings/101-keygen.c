@@ -6,18 +6,15 @@
 
 int main(void)
 {
-    srand(time(NULL)); 
-    char password[PASSWORD_LENGTH + 1]; 
+    char password[PASSWORD_LENGTH + 1]; // +1 for null terminator
     int i;
 
-    for (i = 0; i < PASSWORD_LENGTH; i++) 
-    {
-    
-	    password[i] = '!' + rand() % ('~' - '!' + 1); 
-    
-    }
+    srand(time(NULL)); // initialize random seed with current time
 
-    password[PASSWORD_LENGTH] = '\0'; 
+    for (i = 0; i < PASSWORD_LENGTH; i++) {
+        password[i] = '!' + rand() % ('~' - '!' + 1); // generate random printable ASCII character
+    }
+    password[PASSWORD_LENGTH] = '\0'; // add null terminator to the end of the password
 
     printf("%s\n", password);
 
