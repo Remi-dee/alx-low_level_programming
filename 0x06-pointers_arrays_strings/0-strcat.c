@@ -4,7 +4,7 @@
 char *_strcat(char *dest, char *src)
 {
 	char *temp = dest;
-
+		/*Adding the while loop*/
 	while (*dest)
 		dest++;
 
