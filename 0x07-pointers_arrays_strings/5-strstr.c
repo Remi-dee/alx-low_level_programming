@@ -1,22 +1,28 @@
 #include "main.h"
 /**
- * _strstr - locates a substring.
- */
+*_strstr - The _strstr() function finds the first occurrence
+*/
+
 char *_strstr(char *haystack, char *needle)
 {
-	while (*haystack != '\0')
-	{
-		char *substr = needle;
-		char *base_address = haystack;
+	int i;
 
-		while (*haystack != '\0' && *substr != '\0' && *substr == *haystack)
+	if (*needle == 0)
+		return (haystack);
+
+	while (*haystack)
+	{
+		i = 0;
+
+		if (haystack[i] == needle[i])
 		{
-			substr++;
-			haystack++;
+			do {
+				if (needle[i + 1] == '\0')
+					return (haystack);
+				i++;
+			} while (haystack[i] == needle[i]);
 		}
-		if (*substr == '\0')
-			return (base_address);
-		haystack = base_address + 1;
+		haystack++;
 	}
-	return (0);
+	return ('\0');
 }
