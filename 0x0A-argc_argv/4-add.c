@@ -16,7 +16,6 @@
 5. If the character is a digit, the program adds the number to the sum.
 6. The program prints the sum and returns 0.
 */
-
 int main(int argc, char *argv[])
 {
 	int i, j, sum = 0;
